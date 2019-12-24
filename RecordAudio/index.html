@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RecordAudio</title>
+</head>
+<body>
+
+    <div id="vueapp">
+
+        <div>
+            <button :disabled="recording" @click="btnRecordClicked">Record</button>
+            <button :disabled="paused || !recording" @click="btnPauseClicked">Pause</button>
+            <button :disabled="!paused || !recording" @click="btnResumeClicked">Resume</button>
+            <button :disabled="!recording" @click="btnStopClicked">Stop</button>
+            <button :disabled="!currentWebmData" @click="btnPlayClicked">Play</button>
+        </div>
+
+        <audio controls ref="player"></audio>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
